@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+<div class="row">   
+<div class="col-lg-8 col-md-12 col-sm-12">
+<h1 style="text-align:center;color:var(--primary)">These People needs your help</h1><hr>
+</div>
+<% if session[:admin] %>
+<div class="col-lg-4 col-md-12 col-sm-12">
+<fieldset class="half-column" style="align-items:center">
+<span><%= link_to 'Add New Receiver', new_getter_path, {:class=>"btn1",:style=>"background-color:var(--primary)"}%></span>
+</fieldset>
+</div>
+<%end%>
+</div>
+<div class="container">
+<div class="row">   
+    <% @getters.each do |getter| %>
+<div class="col-lg-3 col-md-12 col-sm-12">
+  <div class="card" style="align-items: center">
+  <div class="card-body" style="text-align: center">
+  <%=image_tag(getter.image_url.to_s,:width=>67,:height=>54,:class=>"rounded-circle") %>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Firstname</h6>  :  <%= getter.firstname %></div>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Lastname</h6>  :  <%= getter.lastname %></div>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Contact</h6>  :  <%= getter.contact %></div>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Location</h6>  :  <%= getter.location %></div>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Need</h6>  :  <%= getter.need %></div>
+      <% if getter.donation %>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Amount</h6>  :  <%= getter.donation.amount %></div>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Donar</h6>  :  <%= getter.donation.donar_name %></div>
+      <% end %>
+      <% if session[:admin] %>
+        <td><%= link_to 'Show', getter %></td>
+        <td><%= link_to 'Edit', edit_getter_path(getter) %></td>
+        <td><%= link_to 'Destroy', getter, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </div> </div> </div>
+    <% end %>
+    </div><br>
+    </div>
+    
+
+<style>
+.rounded-circle{
+    border-radius: 81%;
+    min-width: 0%;
+    padding:2px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+</style>

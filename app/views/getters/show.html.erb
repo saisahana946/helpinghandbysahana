@@ -1,0 +1,57 @@
+
+
+<!--BANNER-->
+<div class="banner">
+<section>
+<h1>A New Profile of <em><%= @getter.firstname %></em> created</h1>
+<h2 class="title">Hope you receive a helping hand soon</h2>
+<a href="#" class="btn1">Our Services</a> <a href="#" class="btn2">Contact Us</a>
+</section>
+<section>
+<div class="form">
+<h1 class="title">Profile Details</h1>
+<form action="" method="post">
+<%=image_tag(@getter.image_url.to_s,:width=>67,:height=>54,:class=>"rounded-circle") %>
+<fieldset>
+<strong>Firstname:</strong>
+<%= @getter.firstname %>
+</fieldset>
+<fieldset>
+<strong>lastname:</strong>
+<%= @getter.lastname %>
+</fieldset>
+<fieldset>
+<strong>Contact:</strong>
+<%= @getter.contact %>
+</fieldset>
+<fieldset>
+<strong>Location:</strong>
+<%= @getter.location %>
+</fieldset>
+<fieldset>
+<strong>Need:</strong>
+<%= @getter.need %>
+</fieldset><br>
+<fieldset class="half-column">
+<span><%= link_to 'Edit', edit_getter_path(@getter), :class=>"btn1" %>   |    <%= link_to 'Back', getters_path, :class=>"btn1" %></span>
+
+</fieldset>
+</form>
+</div>
+</section>
+</div>
+<style>
+.rounded-circle{
+    border-radius: 81%;
+    min-width: 0%;
+    border: solid 5px #cc2366;
+    padding:2px;
+}
+.btn1{
+  
+}
+</style>
+
+
+
+

@@ -1,0 +1,45 @@
+
+
+<!--BANNER-->
+<div class="banner">
+<section>
+<div class="form">
+<h4 class="title"><%= flash[:notice] %></h4>
+<h1 style="color:var(--primary)">Add Your Donation</h1>
+<%= form_with(model: donation, local: true) do |form| %>
+  <div class="row" style="display:flex">
+  <div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.text_field :donar_name,placeholder:"Enter your Name" %>
+<p class='error'><%= show_errors(@donation, :donar_name) %></p>
+</div>
+<div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.text_field :need_user,placeholder:"Enter your location" %>
+<p class='error'><%= show_errors(@donation, :need_user) %></p>
+</div>
+ </div><br>
+ <div class="row" style="display:flex">
+  <div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.text_field :amount,placeholder:"Enter your Amount to donate" %>
+<p class='error'><%= show_errors(@donation, :amount) %></p>
+</div>
+<div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.select :getter_id, Getter.all.collect{|t| [t.firstname,t.id]}%>
+<p class='error'><%= show_errors(@donation, :getter_id) %></p>
+ </div><br>
+
+<fieldset class="half-column">
+<span><%= form.submit 'Donate', {:class=>"btn1",:style=>"background-color:var(--primary)"}%></span>
+</fieldset>
+<% end %>
+</div>
+</section>
+</div>
+<style>
+.error{
+  color:red;
+}
+</style>
+
+
+
+

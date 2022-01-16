@@ -1,0 +1,111 @@
+<br><br>
+<div class="container">
+<div class="row">
+<div class="col-lg-6 col-md-12 col-sm-12">
+<div class="card">
+  <div class="card-body">
+  <div class="row" style="display:flex;">
+  
+  <div class="column">
+  <%= image_tag("health.jpeg",:width=>67,:height=>54,:class=>"rounded-circle")%>
+  <h6>Hospital</h6>
+  </div>
+  <div class="column">
+  <%= image_tag("book.jpeg",:width=>67,:height=>54,:class=>"rounded-circle")%>
+  <h6>Education</h6>
+  </div>
+  <div class="column">
+  <%= image_tag("food.jpeg",:width=>67,:height=>54,:class=>"rounded-circle")%>
+  <h6>Food</h6>
+  </div>
+  <div class="column">
+  <%= image_tag("cloth.jpeg",:width=>67,:height=>54,:class=>"rounded-circle")%>
+  <h6>Clothes</h6>
+  </div>
+  <div class="column">
+  <%= image_tag("child.jpg",:width=>67,:height=>54,:class=>"rounded-circle")%>
+  <h6>Adopt child</h6>
+  </div>
+  <div class="column">
+  <%= image_tag("animal.jpeg",:width=>67,:height=>54,:class=>"rounded-circle")%>
+ <h6>Animals</h6>
+  </div><%# column cardbody %>
+  </div><%# row cardbody %>
+</div><%# card-body %>
+</div> <%# card %><br>
+<div class="card">
+  <div class="card-body">
+  <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+    <%= image_tag("food_slide.jpg",:width=>200,:class=>"d-block w-100")%>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag("edu_slide.jpg",:width=>200,:class=>"d-block w-100")%>
+    </div>
+    <div class="carousel-item">
+    <%= image_tag("3_slide.jpg",:width=>200,:class=>"d-block w-100")%>
+    </div>
+  </div>
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+  </div><%# card-body %>
+  </div><%# card %>
+</div> <%# lg/6-1 %>
+
+
+
+<div class="col-lg-6 col-md-12 col-sm-12">
+<h6 style="text-align:center;color:#cc2366">Testimonials</h6>
+<div class="card">
+  <div class="card-body">
+  <div class="column">
+  <%= image_tag("f1.jpg",:width=>100,:class=>"rounded-circle1")%>
+  <h6>Jenny (Hyderabad)</h6>
+  <p>
+  I wanted to help the poor children. I was not quite sure whether the amount I donate reaches to the poor. Helping Hand created me a good medium  where I can verify myself visiting the orphanages or reaching out to the needy directly</p>
+  </div><%# column %>
+  </div><%# card-body %>
+  </div><%# card %>
+  <br>
+  <div class="card">
+  <div class="card-body">
+  <div class="column">
+<%= image_tag("f2.jpg",:width=>100,:class=>"rounded-circle1")%>
+<h6>Sammy (Chennai)</h6>
+<p>
+Helping Hand is the conception of a brilliant idea that introduces more transparency between donar and receiver. I adopted a orphan child through this Helping hand who was now my whole world.
+</div><%# column %>
+  </div><%# card-body %>
+  </div><%# card %>
+</div><%# lg/6-2 %>
+</div> <%# row %>
+</div> <%# container %>
+<style>
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+.column{
+    padding:0px 8px; 
+    text-align:center; 
+}
+.rounded-circle{
+    border-radius: 81%;
+    min-width: 0%;
+    border: solid 5px var(--primary);
+    padding:2px;
+}
+.rounded-circle1{
+    border-radius: 81%;
+    min-width: 0%;
+    padding:2px;
+    position:center;
+}
+</style>

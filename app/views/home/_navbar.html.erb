@@ -1,0 +1,74 @@
+<!--SHORTCUT ICONS-->
+<link rel="shortcut icon" href="images/favicon.png">
+
+<!--META TAGS-->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="description" content="" />
+<meta name="keywords" content="" />
+<meta name="author" content="" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+
+<!--FONT AWESOME-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!--PLUGIN-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+<!--GOOGLE FONTS-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&family=Source+Sans+Pro:wght@200;300;400;600;700;900&display=swap" rel="stylesheet"> 
+
+
+</head>
+<body>
+
+<!--HEADER-->
+<header>
+<div class="header">
+<section>
+<span class="cross parallelogram"><h1 class="logo skew-fix" alt="LOGO.">Helping Hands </h1></span>
+</section>
+<section>
+<div class="top-tab">
+<span>
+<a href="emailto:helpinghand@support.com"><i class="fa fa-envelope"></i> helpinghand@support.com</a>
+</span>
+<span>
+<a href="#"><i class="fa fa-facebook"></i></a>
+<a href="#"><i class="fa fa-instagram"></i></a>
+<a href="#"><i class="fa fa-twitter"></i></a>
+<a href="#"><i class="fa fa-youtube"></i></a>
+</span>
+</div>
+<div class="topnav" id="myTopnav">
+<a href="#"><h1 id="res_logo">Helping Hands</h1></a>
+<% if session[:admin] %>
+<%=link_to 'Helping Hand Dashboard',dashboard_index_path %>
+<a href="/admin/logout">Logout</a>
+<%elsif user_signed_in? %>
+<%=link_to 'Helping Hand Dashboard',dashboard_index_path %>
+<%=link_to 'Donation',new_donation_path %>
+<%=link_to 'signout',destroy_user_session_path,{method: :delete} %>
+<% else %>
+<%=link_to 'Home', home_index_path %>
+<%=link_to 'Admin', admin_login_path %>
+<%=link_to 'User',new_user_session_path %>
+<%=link_to 'Who needs your Help',getters_path %>
+<% end %>
+<a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="myFunction()">&#9776;</a>
+</div>
+</section>
+</div>
+</header>
+<script>
+function myFunction() {
+  var x = document.getElementById("myTopnav");
+  if (x.className === "topnav") {
+    x.className += " responsive";
+  } else {
+    x.className = "topnav";
+  }
+}
+</script>

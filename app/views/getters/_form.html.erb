@@ -1,0 +1,53 @@
+
+<!--BANNER-->
+<div class="banner">
+<section>
+<div class="form">
+<h4 class="title"><%= flash[:notice] %></h4>
+<h1>Add Receiver</h1>
+<%= form_with(model: getter, local: true) do |form| %>
+  <div class="row" style="display:flex">
+  <div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.text_field :firstname,placeholder:"Enter your firstname" %>
+<p class='error'><%= show_errors(@getter, :firstname) %></p>
+</div>
+<div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.text_field :lastname,placeholder:"Enter your lastname" %>
+<p class='error'><%= show_errors(@getter, :lastname) %></p>
+</div>
+ </div><br>
+ <div class="row" style="display:flex">
+  <div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.text_field :contact,placeholder:"Enter your contact" %>
+<p class='error'><%= show_errors(@getter, :contact) %></p>
+</div>
+<div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.text_field :location,placeholder:"Enter your location" %>
+<p class='error'><%= show_errors(@getter, :location) %></p>
+</div>
+ </div><br>
+ <div class="row" style="display:flex">
+ <div class="col-lg-6 col-md-12 col-sm-12">
+<%= form.text_field :need,placeholder:"Enter your Need" %>
+<p class='error'><%= show_errors(@getter, :need) %></p>
+</div>
+<div class="col-lg-6 col-md-12 col-sm-12">
+<span style="display:flex;align-items:baseline"><h6>Upload Picture</h6><%= form.file_field :image,placeholder:"Upload" %></span>
+</div>
+</div><br>
+<fieldset class="half-column">
+<span><%= form.submit 'Submit', {:class=>"btn1",:style=>"background-color:var(--primary)"}%></span>
+</fieldset>
+<% end %>
+</div>
+</section>
+</div>
+
+<style>
+.error{
+  color:red;
+}
+</style>
+
+
+

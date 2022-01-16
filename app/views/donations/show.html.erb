@@ -1,0 +1,52 @@
+
+<!--BANNER-->
+<div class="banner">
+<section>
+<h1>Thank you <em><%= @donation.donar_name %></em> for making donation</h1>
+<h2 class="title">Thanks for choosing helping hand</h2>
+<a href="#" class="btn1">Our Services</a> <a href="#" class="btn2">Contact Us</a>
+</section>
+<section>
+<div class="form">
+<h1 class="title">Donation Details</h1>
+<form action="" method="post">
+<fieldset>
+<strong>Donar name:</strong>
+<%= @donation.donar_name %>
+</fieldset>
+<fieldset>
+<strong>Location</strong>
+<%= @donation.need_user %>
+</fieldset>
+<fieldset>
+<strong>Amount:</strong>
+<%= @donation.amount %>
+</fieldset>
+<fieldset>
+<strong>Receiver</strong>
+<%= @donation.getter.firstname %>
+</fieldset><br>
+<fieldset class="half-column">
+<span><%= link_to 'Edit', edit_donation_path(@donation), :class=>"btn1" %>   |    <%= link_to 'Back', donations_path, :class=>"btn1" %></span>
+
+</fieldset>
+</form>
+</div>
+</section>
+</div>
+<style>
+.rounded-circle{
+    border-radius: 81%;
+    min-width: 0%;
+    border: solid 5px #cc2366;
+    padding:2px;
+}
+.btn1{
+  
+}
+</style>
+
+
+
+
+

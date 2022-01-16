@@ -1,0 +1,40 @@
+
+<!--BANNER-->
+<div class="banner">
+<section>
+<h3>Welcome To <em>Helping</em> Hand</h3>
+<h1 class="title">Your donation save someone's life</h1>
+<a href="#" class="btn1">Our Services</a> <a href="#" class="btn2">Contact Us</a>
+</section>
+<section>
+<div class="form">
+<h4 class="title"><%= flash[:notice] %></h4>
+<h1 class="title" style="color:var(--primary)">User SignUp</h1>
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+<fieldset>
+<%= f.email_field :email, autofocus: true, autocomplete: "email",placeholder:"Enter your email" %>
+</fieldset><br>
+<fieldset>
+<% if @minimum_password_length %>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <% end %><br />
+    <%= f.password_field :password, autocomplete: "new-password",placeholder:"Enter your password" %>
+</fieldset><br>
+<fieldset>
+<%= f.password_field :password_confirmation, autocomplete: "new-password",placeholder:"Confirm your password" %>
+</fieldset><br>
+
+<fieldset class="half-column">
+<span><%= f.submit 'Signup', {:class=>"btn1",:style=>"background-color:var(--primary)"}%></span>
+</fieldset>
+<%= render "devise/shared/links" %>
+<% end %>
+</div>
+</section>
+</div>
+
+
+
+
+

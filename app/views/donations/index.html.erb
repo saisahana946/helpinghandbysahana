@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+<div class="row">   
+<div class="col-lg-8 col-md-12 col-sm-12">
+<h1 style="text-align:center;color:var(--primary)">You made it. Thank you</h1><hr>
+</div>
+<% if session[:admin] %>
+<div class="col-lg-4 col-md-12 col-sm-12">
+<fieldset class="half-column" style="align-items:center">
+<span><%= link_to 'Add your Donation', new_donation_path, {:class=>"btn1",:style=>"background-color:var(--primary)"}%></span>
+</fieldset>
+</div>
+<%end%>
+</div>
+<div class="container">
+<div class="row">   
+<% @donations.each do |donation| %>
+<div class="col-lg-3 col-md-12 col-sm-12">
+  <div class="card" style="align-items: center">
+  <div class="card-body" style="text-align: center">
+      <div class="row" style="display:flex;align-items: baseline"><h6>Donar</h6>  :  <%= donation.donar_name %></div>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Purpose</h6>  :  <%= donation.need_user %></div>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Amount</h6>  :  <%= donation.amount %></div>
+      <div class="row" style="display:flex;align-items: baseline"><h6>Person</h6>  :  <%= donation.getter.firstname %></div>
+      <% if session[:admin] %>
+        <td><%= link_to 'Show', donation %></td>
+        <td><%= link_to 'Edit', edit_donation_path(donation) %></td>
+        <td><%= link_to 'Destroy', donation, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <%end%>
+      </div> </div> </div>
+    <% end %>
+    </div><br>
+    </div>
+    
+
+<style>
+.rounded-circle{
+    border-radius: 81%;
+    min-width: 0%;
+    padding:2px;
+}
+.card{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+</style>

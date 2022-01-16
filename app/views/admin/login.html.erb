@@ -1,0 +1,31 @@
+
+<!--BANNER-->
+<div class="banner">
+<section>
+<h3>Welcome To <em>Helping</em> Hand</h3>
+<h1 class="title">Your donation save someone's life</h1>
+<a href="#" class="btn1">Our Services</a> <a href="#" class="btn2">Contact Us</a>
+</section>
+<section>
+<div class="form">
+<h4 class="title"><%= flash[:notice] %></h4>
+<h1 class="title" style="color:var(--primary)">ADMIN LOGIN</h1>
+<%= form_with do |form| %>
+<fieldset>
+<%= form.text_field :username, placeholder:"Enter your username" %>
+</fieldset><br>
+<fieldset>
+<%= form.password_field :password, placeholder:"Enter your password" %>
+</fieldset><br>
+<fieldset class="half-column">
+<span><%= form.submit 'Login', {:class=>"btn1",:style=>"background-color:var(--primary)"}%></span>
+</fieldset>
+<% end %>
+</div>
+</section>
+</div>
+
+
+
+
+

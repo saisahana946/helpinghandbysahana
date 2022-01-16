@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  party: MyString
+  location: MyString
+  date: 2022-01-15
+
+two:
+  party: MyString
+  location: MyString
+  date: 2022-01-15
