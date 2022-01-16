@@ -41,7 +41,8 @@ group :development do
   gem 'sqlite3', '~> 1.4'
 end
 group :production do
-  gem 'pg', '~> 1.2', '>= 1.2.3'
+  gem 'pg'
+  gem 'rails_12factor'
 end
 group :test do
   # Adds support for Capybara system testing and selenium driver
